@@ -1,0 +1,29 @@
+static_library("myapp1") {
+
+    sources = [ "appEntrance.c" ]
+    sources += [
+        "WT1_IMU/wt1_imu_driver.c",
+        "server_commuincation/server_communication.c",
+        "uart_to_esp32cam/uart_to_esp32cam.c",
+        "stepping_motor/stepping_motor.c",
+        "network/network_manage.c",
+        "3861_button/3861_button.c",
+    ]
+
+    include_dirs = [
+        "//utils/native/lite/include",
+        "//foundation/communication/wifi/wifi/interfaces/kits/c",
+        "//kernel/liteos_m/components/cmsis/2.0",
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "//applications/sample/wifi-iot/app/myapp/",
+        "//device/soc/hisilicon/hi3861v100/hi3861_adapter/kal/cmsis/",
+        "//applications/sample/wifi-iot/app/myapp/network",
+        "//applications/sample/wifi-iot/app/myapp/WT1_IMU",
+        "//applications/sample/wifi-iot/app/myapp/server_commuincation",
+        "//applications/sample/wifi-iot/app/myapp/uart_to_esp32cam",
+        "//applications/sample/wifi-iot/app/myapp/stepping_motor",
+        "//applications/sample/wifi-iot/app/myapp/3861_button",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
